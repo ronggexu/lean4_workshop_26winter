@@ -15,6 +15,7 @@ lean4_workshop_26winter/
 ├── homeworks/        # 作业
 ├── materials/        # 参考资料
 ├── notes/            # 讲义
+├── AI4M_slices/      # AI for Math slices
 ├── LEAN_INSTALL.md   # Lean环境安装（Windows / macOS）
 ├── .gitignore      
 ├── LICENSE         
