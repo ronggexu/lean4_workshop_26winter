@@ -10,7 +10,7 @@
 
 - `Basic.lean` 凸集的定义及相关命题
 
-- `Conbination.lean` 凸组合的定义及相关命题
+- `Combination.lean` 凸组合的定义及相关命题
 
 - `Function.lean` 凸、凹函数的定义及相关命题
 
@@ -40,14 +40,14 @@ def Convex : Prop :=
 ∀ ⦃x : E⦄, x ∈ s → StarConvex 𝕜 x s
 ```
 
-### `convexHull` 取闭包
-用法为 `convexHull 𝕜 s`，表示取 `s` 的闭包.
+### `convexHull` 取凸包（最小凸集）
+用法为 `convexHull 𝕜 s`，表示取 `s` 的凸包.
 ```lean
 def convexHull : ClosureOperator (Set E) := .ofCompletePred (Convex 𝕜) fun _ ↦ convex_sInter
 ```
-这个定义利用了 Lean 的取闭包算子 `ClosureOperator`，找到包含 $s$ 的最小的凸集，利用 `convex_sInter`（闭包的交依然是闭包）这一性质.
+这个定义利用了 Lean 的取闭包算子 `ClosureOperator`，找到包含 $s$ 的最小的凸集，利用 `convex_sInter`（凸集的交依然是凸集）这一性质.
 
-数学对应：$\text{convexHull}(s) = \bigcap \{ t \mid s \subseteq t, t \text{ 凸} \}$
+数学对应：$\mathrm{convexHull}(s) = \bigcap \{ t \mid s \subseteq t, t \text{ 凸} \}$
 
 ### `ConvexOn` 凸函数
 
@@ -93,7 +93,7 @@ convex_sInter.{u_1, u_2} {𝕜 : Type u_1} {E : Type u_2} [Semiring 𝕜] [Parti
     凸函数 $f$ 乘以一个正数依然是凸函数.
 
 
-### `ConvexOn.map_centerMass_le` 离散/积分版本琴生不等式
+### `ConvexOn.map_centerMass_le` 离散/积分版本 Jensen 不等式
 - `#check map_centerMass_le`
     ```lean
     ConvexOn.map_centerMass_le.{u_1, u_2, u_4, u_5} {𝕜 : Type u_1} {E : Type u_2} {β : Type u_4} {ι : Type u_5} [Field 𝕜]
@@ -107,7 +107,7 @@ convex_sInter.{u_1, u_2} {𝕜 : Type u_1} {E : Type u_2} [Semiring 𝕜] [Parti
 
     $$f(\sum \frac{\omega_i}{\sum \omega_i}p_i)\leq\sum \frac{\omega_i}{\sum \omega_i}f(p_i)$$
 
-    定理中使用的 `centerMass` 其实就是加权平均.
+    定理中使用的 `centerMass` 就是加权平均.
 - 在连续化权重之后，有积分版本的 Jensen 不等式：
 
     `#check ConvexOn.map_average_le`
