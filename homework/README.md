@@ -33,7 +33,7 @@
     git checkout -b group_1
     ```
 5. **编辑作业文件**
-   在 `homework` 目录下创建或编辑你的作业文件, 例如：`hw1_group_1.md`
+   在 `homework/hw1` 目录下创建或编辑你的作业文件, 例如：`hw1_group_1.md`
 6. **提交更改**
     ```bash
     git status      # 查看文件更改状态
