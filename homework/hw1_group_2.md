@@ -47,7 +47,10 @@ def convexHull : ClosureOperator (Set E) := .ofCompletePred (Convex 𝕜) fun _ 
 ```
 这个定义利用了 Lean 的取闭包算子 `ClosureOperator`，找到包含 $s$ 的最小的凸集，利用 `convex_sInter`（凸集的交依然是凸集）这一性质.
 
-数学对应：$\mathrm{convexHull}(s) = \bigcap \{ t \mid s \subseteq t, t \text{ 凸} \}$
+数学对应：
+```math
+\mathrm{convexHull}(s) = \bigcap \{ t \mid s \subseteq t, t \mathrm{convex} \}
+```
 
 ### `ConvexOn` 凸函数
 
@@ -127,7 +130,7 @@ convex_sInter.{u_1, u_2} {𝕜 : Type u_1} {E : Type u_2} [Semiring 𝕜] [Parti
     > For the average on a set, use ⨍ x in s, f x ∂μ, defined as ⨍ x, f x ∂(μ.restrict s)
 ## 待形式化的内容
 - 证明严格凸函数的微分性质
-- 平衡集（$s:\forall |\lambda|\leq1,\lambda s \subseteq s$）是星形集
+- 平衡集（s : ∀ |λ|≤1, λ • s ⊆ s）是星形集
 - 星形集的闭包是星形集
 - 星形集可缩（单点空间同伦等价）
 - 凸集的支撑集
