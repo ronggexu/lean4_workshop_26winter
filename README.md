@@ -1,7 +1,7 @@
 # lean4_workshop_26winter
 
 ## 📅 日程安排   
-- 地点 Location：宁斋求真厅
+- 地点 Location：清华大学宁斋求真厅
 - 授课人 Lecturer：许容阁
 - 助教 TAs：聂天骄 杨家同 赵子铭 胡伯阳
 
