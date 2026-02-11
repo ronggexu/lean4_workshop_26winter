@@ -30,6 +30,9 @@ lean4_workshop_26winter/
 ## 作业提交
 参考 [homeworks/README.md](homework/README.md)
 
+## 课程讲义
+[lecture_notes/all.pdf](lecture_notes/all.pdf)
+
 ## 常用链接
 
 - Lean community 主页：https://leanprover-community.github.io  
